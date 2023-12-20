@@ -39,11 +39,9 @@ pub fn part_two(input: &str) -> Option<u64> {
             .unwrap()
             .replace(" ", "").parse::<u64>().unwrap()).collect();
 
-
     let (time, distance) = (&input[0], &input[1]);
 
     let mut win_count: u64 = 0;
-    // sec == time button being held at start == mm/ms
     for sec in 0..*time {
         if sec * (time - sec) > *distance {
             win_count += 1;
